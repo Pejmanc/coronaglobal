@@ -23,7 +23,7 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
           datasets: [
             {
               label: 'People',
-              backgroundColor: ['rgba(0, 0, 255, 0.5)', 'rgba(0, 255, 0, 0.5)', 'rgba(255, 0, 0, 0.5)'],
+              backgroundColor: ['rgba(195, 219, 234, 0.7)', 'rgba(74, 170, 152, 0.7)', 'rgba(266, 167, 54, 0.7)'],
               data: [confirmed.value, recovered.value, deaths.value],
             },
           ],
@@ -36,38 +36,39 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
     ) : null
   );
 
-  const lineChart = (
-    dailyData[0] ? (
-      <Line
-        data={{
-          labels: dailyData.map(({ date }) => new Date(date).toLocaleDateString()),
-          datasets: [{
-            data: dailyData.map((data) => data.confirmed),
-            label: 'Infected',
-            borderColor: '#3333ff',
-            fill: true,
-          }, {
-            data: dailyData.map((data) => data.deaths),
-            label: 'Deaths',
-            borderColor: 'red',
-            backgroundColor: 'rgba(255, 0, 0, 0.5)',
-            fill: true,
-          },  {
-            data: dailyData.map((data) => data.recovered),
-            label: 'Recovered',
-            borderColor: 'green',
-            backgroundColor: 'rgba(0, 255, 0, 0.5)',
-            fill: true,
-          },
-          ],
-        }}
-      />
-    ) : null
-  );
+  // const lineChart = (
+  //   dailyData[0] ? (
+  //     <Line
+  //       data={{
+  //         labels: dailyData.map(({ date }) => new Date(date).toLocaleDateString()),
+  //         datasets: [{
+  //           data: dailyData.map((data) => data.confirmed),
+  //           label: 'Infected',
+  //           borderColor: '#9fc7df',
+  //           backgroundColor: '#9fc7df',
+  //           fill: true,
+  //         }, {
+  //           data: dailyData.map((data) => data.recovered),
+  //           label: 'Recovered',
+  //           borderColor: '#4eb59c',
+  //           backgroundColor: '#4eb59c',
+  //           fill: true,
+  //         },{
+  //           data: dailyData.map((data) => data.deaths),
+  //           label: 'Deaths',
+  //           borderColor: '#e2a736',
+  //           backgroundColor: '#e2a736',
+  //           fill: true,
+  //         },  
+  //         ],
+  //       }}
+  //     />
+  //   ) : null
+  // );
 
   return (
     <div className={styles.container}>
-      {country ? barChart : lineChart}
+      {barChart}
     </div>
   );
 };
