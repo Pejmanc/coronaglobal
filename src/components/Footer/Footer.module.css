@@ -1,0 +1,11 @@
+.footer {
+  width: 100vw;
+  background-color: #3053a8;
+  color: #acb1bb;
+  text-align: center;
+  margin-bottom: 0;
+  margin-top: 2rem;
+  padding: 1rem 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
